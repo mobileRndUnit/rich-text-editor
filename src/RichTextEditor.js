@@ -2,7 +2,7 @@ import React, { Component,
    // PropTypes 
  } from 'react';
 import WebViewBridge from 'react-native-webview-bridge';
-import CookieManager from 'labarchives-cookies';
+// import CookieManager from 'labarchives-cookies';
 import { InjectedMessageHandler } from './WebviewMessageHandler';
 import { actions, messages } from './const';
 import { Button, ScrollView, Modal, View, Text, StyleSheet, TextInput, TouchableOpacity, Platform, PixelRatio, Keyboard, Dimensions, Image } from 'react-native';
@@ -74,18 +74,18 @@ export default class RichTextEditor extends Component {
     if (this.props.auth) {
       const domain = this.props.auth.domain.match(/^https:\/\/(.*)/);
 
-      CookieManager.set({
-        name: this.props.auth.name,
-        value: this.props.auth.value,
-        domain: domain[1],
-        origin: domain[1],
-        path: this.props.auth.path,
-        version: '1',
-        expiration: '2019-06-15T10:16:30.000Z', // 2019-06-15T10:16:30.000Z
-      }, (err, res) => {
-        console.log(err);
-        console.log(res);
-      });
+//       CookieManager.set({
+//         name: this.props.auth.name,
+//         value: this.props.auth.value,
+//         domain: domain[1],
+//         origin: domain[1],
+//         path: this.props.auth.path,
+//         version: '1',
+//         expiration: '2019-06-15T10:16:30.000Z', // 2019-06-15T10:16:30.000Z
+//       }, (err, res) => {
+//         console.log(err);
+//         console.log(res);
+//       });
     }
     if (PlatformIOS) {
       this.keyboardEventListeners = [
